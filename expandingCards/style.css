@@ -1,0 +1,73 @@
+/* importing fonts into css rather than linking in html */
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+*{
+    box-sizing: border-box;
+}
+/* set everything in the body to align the expansion effect in the center of the screen and for everything to use the same font */
+body{
+    font-family: 'Muli', sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    margin:0;
+}
+/* container that holds all expansion effect specificaly aligns the divs in line with eachother as is the default flex direction */
+.container{
+    display:flex;
+    width:90vw;
+}
+/* every panel (just panel not panel active) */
+.panel{
+    /* make sure the images fit the divs well. cover is full image but instead of auto. this preserves our rounded edges , center makes sure the right part of the image is shown, no repeat ireonically repeated from html */
+    background-size:cover;
+    background-position:center;
+    background-repeat:no-repeat;
+    /* each div will take up 80 parts of the 100, the rounded edges come from the border radius */
+    height:80vh;
+    border-radius: 50px;
+    /* font color, and cursor type are set */
+    color:white;
+    cursor:pointer;
+    /* when the panel is not active it will be flex.5 so only take up half of a portion of the full flex area */
+    flex:.5;
+    margin:10px;
+    /* this has to be se to relative because the text is going to be set to absolute */
+    position:relative;
+    /* transition to smooth the change in size between collapsed and expanded panels */
+    transition:flex 0.7s ease-in;
+}
+    /* for all of the h3 tags that are in a div witha panel class */
+.panel h3{
+    /* set font size for all, the position is set to absolute to ensure they dont move and they are all in the same spot of their respective div */
+    font-size:24px;
+    position:absolute;
+    /* setting where the absolute position is */
+    bottom:20px;
+    left:20px;
+    margin:0;
+    /* by default in this small shape the opacity is just set to zero so they only show up when they are guaranteed to be not be cut off */
+    opacity:0;
+}
+/* when the divs are active they will have a flex value of 5 rather than .5 */
+.panel.active{
+    flex:5;
+
+}
+/* when the div is active we will bring the opacity back up and apply a transition so it gently appears and iss fully visible at the same time the time the div expands full */
+.panel.active h3{
+    opacity:1;
+    transition:opacity 0.3s ease-in 0.4s;
+}
+/* we will get rid of the 4th and 5th panels and make the container take up a little more spaece when the width is 480px or less.  */
+@media(max-width:480px){
+    .container{
+        width:100vw;
+    }
+    .panel:nth-of-type(4),
+    .panel:nth-of-type(5){
+        display:none;
+    }
+
+}
