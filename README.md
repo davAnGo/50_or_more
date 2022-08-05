@@ -1,0 +1,1 @@
+# 50_or_more is a repo filled with my execution and notes on the course 50 projects in 50 days by Brad Traversy and Florin Pop. This code is not exclusively mine but I do make an effort to change it and make it my own as much as possible.
