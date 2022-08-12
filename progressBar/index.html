@@ -1,0 +1,30 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>progress bar</title>
+</head>
+<!-- the body will display flex in order to place the progress bar vcontainer in the center of the screen  -->
+<body>
+            <!-- now a container to hold the progress apparatus as a whole -->
+    <div class="container">
+        <div class="progress-container">
+            <!-- each div from here is a component of the the bar. the progress dive is in fact the progress bar in its grey entirety and aand as the class is added the color grows incrementally  -->
+            <div class="progress" id="progress"></div>
+            <!-- each of these divs are the circle that mark the step at which you are. and will also change color to math the line when reached -->
+            <div class="circle active">0</div>
+            <div class="circle">2</div>
+            <div class="circle">3</div>
+            <div class="circle">4</div>
+        </div>
+        <!-- buttons to iterate the next step of what ever process you are tracking. these will activate the classes in order to casue the change in color and or size -->
+        <button class="btn" id="prev" disabled>Prev</button>
+        <button class="btn" id="next">Next</button>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>

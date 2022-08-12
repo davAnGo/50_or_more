@@ -1,0 +1,123 @@
+@import url('https://fonts.googleapis.com/css?family=Muli&display=swap');
+
+/* defining custom properties */
+
+/* setting the scope to the root scope */
+:root{
+    --line-border-fill:#3498db;
+    --line-border-empty:#e0e0e0;
+}
+
+/*  this is all basic boiler plate setup for most projects */
+
+*{
+    box-sizing: border-box;
+    padding: 0%;
+    margin: 0%;
+}
+
+
+body{
+    background-color: #f6f7fb;
+    font-family: 'Muli', sans-serif;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    height:100vh;
+    margin:0;
+}
+
+.container{
+    text-align:center;
+}
+
+/*  we will need the container holding the progress bar and cirrcles to display flex so that it is oriented horizontally */
+.progress-container{
+    display:flex;
+    justify-content: space-between;
+    /* we are making the position of this relative so that we can position what we need inside as absolute */
+    position: relative;
+    margin-bottom: 30px;
+    /* max width is set to ensure no mattter what we set the width to our progerss bar will take up all the space */
+    max-width:100%;
+    width:500px;
+}
+/* using the before selector we implement the same line but instead of blue we use the color set in the empty border variable   */
+.progress-container::before{
+    /* there must be content for there to be a before tag so this contenet is just set to an empty string */
+    content:'';
+    background-color:var(--line-border-empty);
+    position: absolute;
+    top:50%;
+    left:0;
+    /* when setting the divs absolute position to center the top is set to the center so by transforming we have set the middle to the middle */
+    transform:translateY(-50%);
+    height:4px;
+    width:100%;
+    z-index: -1;
+}
+
+/* this will be our blue line hta shows progress */
+.progress{
+    background-color:var(--line-border-fill);
+    /*  this bar wil be positioned absolut so that it is always in the middle of the container holding it */
+    position: absolute;
+    /* setting the position and size */
+    top:50%;
+    left:0;
+    /* when setting the divs absolute position to center the top is set to the center so by transforming we have set the middle to the middle */
+    transform:translateY(-50%);
+    height:4px;
+    width:0%;
+    /* we want the progress bar to be behind the numbers and circles so we set the z axis to -1 */
+    z-index: -1;
+    transition:.4s ease;
+}
+
+/* buildint the base circle pretty standard stuff as well as stuff covered above */
+.circle{
+    background-color: white;
+    color:#999;
+    border-radius: 50%;
+    height:30px;
+    width:30px;
+    display:flex;
+    align-items: center;
+    justify-content: center;
+    border: 3px solid var(--line-border-empty);
+    transition:.4s ease;
+}
+
+/* changing the color of the active circle */
+.circle.active{
+    border-color:var(--line-border-fill);
+}
+
+/* building our buttons. default is when they are enabled or active */
+
+.btn{
+    background-color: var(--line-border-fill);
+    color: white;
+    border:0;
+    border-radius: 6px;
+    cursor:pointer;
+    /* ensure you are inheriting the font family */
+    font-family: inherit;
+    padding: 8px 30px;
+    margin:5px;
+    font-size:14px;
+}
+
+/* when clicked we get a nice scaling effect */
+.btn:active{
+    transform:scale(.98);
+}
+/* when the button is in its focus state it will lose its outline */
+.btn:focus{
+    outline:0;
+}
+/* styling the button when it is in a disabled state */
+.btn:disabled{
+    background-color: var(--line-border-empty);
+    cursor:not-allowed;
+}
