@@ -1,0 +1,26 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <!-- <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.1.2/css/all.min.css" integrity="sha512-1sCRPdkRXhBV2PBLUdRb4tMg1w2YPf37qatUFeS7zlBy7jJI8Lf4VHwWfZZfpXtYSLy85pkm9GaYVYMfw5BC1A==" crossorigin="anonymous" referrerpolicy="no-referrer" /> -->
+    <link rel="stylesheet" href="style.css">
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Marvel vs DC</title>
+</head>
+<body>
+    <div class="container">
+        <div class="split left">
+            <h1>Marvel</h1>
+            <a onclick="addToMarvelCount()" id="marvelVote" href="#" class="btn">Vote</a>
+            <h2 class="marvelCounter">0</h2>
+        </div>
+        <div class="split right">
+            <h1>DC</h1>
+            <a onclick="addToDCCount()" id="dcVote" href="#" class="btn">Vote</a>
+            <h2 class="dcCounter">0</h2>
+        </div>
+    </div>
+    <script src="script.js"></script>
+</body>
+</html>
