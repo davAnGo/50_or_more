@@ -1,0 +1,61 @@
+@import url('https://fonts.googleapis.com/css2?family=Roboto:wght@400;700&display=swap');
+@import url('https://fonts.googleapis.com/css2?family=Silkscreen&display=swap');
+*{
+    box-sizing: border-box;
+    font-family: 'Silkscreen', cursive;
+}
+
+body{
+    background-image: linear-gradient(to bottom right,#464F41,#56776C,#5B8A72,#BFCBA8,#BFCBA8);
+    display:flex;
+    padding-top:75px;
+    flex-direction: column;
+    flex-wrap:wrap;
+    align-items: center;
+    justify-content: top;
+    text-align: center;
+    height:100vh;
+    overflow: hidden;
+    margin:0;
+}
+h1{
+    font-size: 35pt;
+}
+.btn{
+    cursor:pointer;
+}
+.btn:hover{
+    opacity:0.9;
+}
+
+.btn:focus{
+    outline:none;
+}
+
+button{
+    height:40px;
+    width:12vw;
+}
+
+button:hover{
+    background-color: rgba(0, 94, 255, 0.594);
+    margin: 20px;
+    transition:700ms;
+    transform:scale(1.5);
+}
+button:not(:hover){
+    transition:400ms;
+    width:12vw;
+}
+.header{
+    margin:40px;
+}
+
+/* animation */
+@keyframes buttonAnimation{
+    0%   {background-color: #125B50;}
+    25%  {background-color: #F8B400;}
+    50%  {background-color: #377D71}
+    75%  {background-color: #F8B400;}
+    100% {background-color: #FF6363;}
+}
